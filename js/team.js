@@ -1,5 +1,6 @@
 const teamList = document.getElementById("team-list");
-const sortButton = document.querySelector(".btn");
+//change from querySelector(.btn) to getElementById
+const sortButton = document.getElementById("sort");
 
 let team = [...STAFF];
 
@@ -24,6 +25,9 @@ function renderTeam() {
 }
 
 function sortByName() {
+  //added check below
+  console.log("sortByName ran");
+
   team.sort((a, b) => a.name.localeCompare(b.name));
   renderTeam();
 }

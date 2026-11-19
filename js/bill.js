@@ -29,9 +29,14 @@ function calculate() {
   }
   message.textContent = "";
 
+
   const tipAmount = (bill * tipPercent) / 100;
-  const total = Rounding.toNearest5Sen(bill + tipAmount);
+  // added .value to line below
+  const total = Rounding.toNearest5Sen(bill + tipAmount).value;
   const perPerson = total / people;
+
+  //added check below
+  console.log("total", total);
 
   receipt.bill.textContent = formatRM(bill);
   receipt.tipLabel.textContent = `Tip (${tipPercent}%)`;

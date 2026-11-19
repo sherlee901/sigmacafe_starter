@@ -21,6 +21,10 @@ function render(items) {
 }
 
 function filterBy(category) {
+  //added two lines below to debug
+  console.log("category", category);
+  console.log(category.length);
+
   const wanted = category.toLowerCase();
   if (wanted === "all") {
     render(MENU_ITEMS);
@@ -31,7 +35,8 @@ function filterBy(category) {
 }
 
 chips.forEach((chip) => {
-  chip.addEventListener("click", () => filterBy(chip.textContent));
+  //added .trim to line below
+  chip.addEventListener("click", () => filterBy(chip.textContent.trim()));
 });
 
 render(MENU_ITEMS);
